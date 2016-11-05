@@ -28,12 +28,6 @@ th.vertical{
     writing-mode: sideways-lr;
 }
 
-p.axis-info {
-    data-toggle: "tooltip";
-    data-placement: "top";
-    title: "Click for definitions";
-}
-
 td.vl {
     background-color: rgb(50, 50, 50);
     color: white;
