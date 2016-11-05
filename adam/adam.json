@@ -30,16 +30,16 @@
 
     "SpatialDistribution": {
       "Isolated": {
-        "density": "The instability is spotty and found in only a few terrain features.",
-        "evidence":"Evidence is rare and hard to find."
+        "Density": "The instability is spotty and found in only a few terrain features.",
+        "Evidence":"Evidence is rare and hard to find."
       },
       "Specific": {
-        "density": "The instability exists in terrain features with common characteristics.",
-        "evidence":"Evidence exists but is not always obvious."
+        "Density": "The instability exists in terrain features with common characteristics.",
+        "Evidence":"Evidence exists but is not always obvious."
       },
       "Widespread": {
-        "density": "The instability is found in many locations and terrain features.",
-        "evidence":"Evidence is everywhere and easy to find."
+        "Density": "The instability is found in many locations and terrain features.",
+        "Evidence":"Evidence is everywhere and easy to find."
       }
     },
 

@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="jquery_dummy.js"></script>
-    <title>Title</title>
+    <title>ADAM</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -51,7 +51,9 @@
                         <th data-toggle="modal" data-target="#modal_widespread">
                             <p data-toggle="tooltip" data-placement="top" title="Click for definitions">Widespread</p>
                         </th>
-                        <th>Specific</th>
+                        <th data-toggle="modal" data-target="#modal_specific">
+                            Specific
+                        </th>
                         <th>Isolated</th>
                         <th>Size 1</th>
                         <th>Size 2</th>
@@ -184,6 +186,31 @@
             </div>
             <div class="modal-body">
                 <p><b>Density:</b> The instability is found in many locations and terrain features</p>
+                <p><b>Evidence:</b> Evidence is everywhere and easy to find</p>
+            </div>
+            <div class="modal-header eaws_color">
+                <h4 class="modal-title">Spatial Distribution: <u>Widespread</u></h4>
+            </div>
+            <div class="modal-body">
+                <p>Over 30% of the potential avalanche terrain is considered unstable.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="modal_specific" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header cmah_color">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Spatial Distribution: <u>Specific</u></h4>
+            </div>
+            <div class="modal-body">
+                <p id="specific_density"><b>Density:</b> The instability is found in many locations and terrain features</p>
                 <p><b>Evidence:</b> Evidence is everywhere and easy to find</p>
             </div>
             <div class="modal-header eaws_color">
