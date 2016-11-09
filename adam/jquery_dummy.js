@@ -2,12 +2,13 @@
  * Created by kmu on 04.11.2016.
  */
 
+// TODO: split the L- and D-matrix to make the web side more responsive
 
 $(document).ready(function () {
     // Get JSON-formatted data from the server
     $.getJSON("adam.json", function (adam) {
         $('th').click(function () {
-
+            // TODO: use this.getID to get the correct key in adam.json, so this modal can be universal for all axis-labels
             //var ele = document.getElementById("specific_density");
             //$(ele).text(adam.ADAM.SpatialDistribution);
             $("div#modal_specific").html(
@@ -35,6 +36,11 @@ $(document).ready(function () {
             // $("div").hide();
         });
     });
+
+
+    // TODO: insert a modal for the size classes using the description in the json file.
+    // Maybe it can be combined somehow with the modals for the Likelihood matrix
+
 
     // change border color when hovering over a td element
     $("td").hover(function () {
