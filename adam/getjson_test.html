@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("button").click(function () {
-                $("#div1").getJSON('test.json', function (responseTxt, statusTxt, xhr) {
-                    if (statusTxt == "success")
-                        alert("External content loaded successfully!");
-                    if (statusTxt == "error")
-                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+
+    <script type="text/javascript">
+        function showAdam() {
+            $.getJSON("adam.json", function (data) {
+                $.each(data.ADAM.DangerLevelColors, function (key, val) {
+                    $("<div>" + key + " = " + val + "</div>").appendTo("#container");
                 });
             });
-        });
+        }
     </script>
+
 </head>
 <body>
 
-<button>Get JSON data</button>
+<button id="bt_adam" onclick="showAdam()">ADAM</button>
 
-<div id="div1">Placeholder</div>
+<div id="container">Placeholder</div>
 
 </body>
 </html>
