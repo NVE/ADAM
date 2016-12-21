@@ -10,6 +10,7 @@
   "CMAH": {
 
     "sensitivity_to_triggers": {
+      "label": "Sensitivity to triggers_",
       "unreactive": {
         "natural_trigger": "No avalanches",
         "human_trigger": "No avalanches"
@@ -98,7 +99,7 @@
     },
 
     "avalanche_terrain":{
-      "name": "Avalanche terrain"
+      "name": "Avalanche terrain",
       "definition": "Avalanche terrain generally includes all terrain that has a slopes of more than 25/30? degrees"
     }
 

@@ -25,7 +25,7 @@ th.title {
 }
 
 th.vertical{
-    writing-mode: sideways-lr;
+    writing-mode: vertical-lr;
 }
 
 td.vl {
