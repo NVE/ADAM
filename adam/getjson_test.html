@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function showAdam() {
+            $.getJSON("adam.json", function (data) {
+                $.each(data.ADAM.DangerLevelColors, function (key, val) {
+                    $("<div>" + key + " = " + val + "</div>").appendTo("#container");
+                });
+            });
+        }
+    </script>
+
+</head>
+<body>
+
+<button id="bt_adam" onclick="showAdam()">ADAM</button>
+
+<div id="container">Placeholder</div>
+
+</body>
+</html>
