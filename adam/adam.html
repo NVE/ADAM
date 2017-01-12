@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="adam.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="adam_def.js"></script>
     <script src="adam.js"></script>
     <title>Title</title>
 </head>
@@ -61,7 +62,7 @@
                     </tr>
 
                     <tr>
-                        <th id="sensitivity_label" rowspan="4" class="vertical">Sensitivity to triggers</th>
+                        <th id="sensitivity_label" rowspan="4" class="vertical">###Sensitivity to triggers</th>
                         <th>Touchy</th>
                         <td class="vl w3-hover-opacity">Very likely</td>
                         <td class="li w3-hover-opacity">Likely</td>
@@ -141,8 +142,8 @@
                         Choose terminology<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">CMAH</a></li>
-                        <li><a href="#">EAWS</a></li>
+                        <li><a id="setCMAH">CMAH</a></li>
+                        <li><a id="setEAWS">EAWS</a></li>
                     </ul>
                 </div>
 
@@ -209,12 +210,13 @@
             </div>
             <div class="modal-body">
                 <p><b>Natural avalanches:</b> Few</p>
-                <p><b>Human triggering:</b> Difficult to trigger</p>
+                <p id="humanTrigger"><b>Human triggering:</b> ### - Difficult to trigger</p>
             </div>
         </div>
 
     </div>
 </div>
+
 
 </body>
 </html>

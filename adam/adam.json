@@ -1,14 +1,12 @@
 {
   "danger_level_colors": {
-      "low": "rgb(80, 184, 72)",
-      "moderate": "rgb(255, 242, 0)",
-      "considerable": "rgb(247, 148, 30)",
-      "high": "rgb(237, 28, 36)",
-      "extreme": "rgb(35, 31, 32)"
-    },
-
+    "low": "rgb(80, 184, 72)",
+    "moderate": "rgb(255, 242, 0)",
+    "considerable": "rgb(247, 148, 30)",
+    "high": "rgb(237, 28, 36)",
+    "extreme": "rgb(35, 31, 32)"
+  },
   "CMAH": {
-
     "sensitivity_to_triggers": {
       "label": "Sensitivity to triggers_",
       "unreactive": {
@@ -28,25 +26,23 @@
         "human_trigger": " Triggering almost certain"
       }
     },
-
     "spatial_distribution": {
       "isolated": {
         "name": "Isolated",
         "density": "The instability is spotty and found in only a few terrain features.",
-        "evidence":"Evidence is rare and hard to find."
+        "evidence": "Evidence is rare and hard to find."
       },
       "specific": {
         "name": "Specific",
         "density": "The instability exists in terrain features with common characteristics.",
-        "evidence":"Evidence exists but is not always obvious."
+        "evidence": "Evidence exists but is not always obvious."
       },
       "widespread": {
         "name": "Widespread",
         "density": "The instability is found in many locations and terrain features.",
-        "evidence":"Evidence is everywhere and easy to find."
+        "evidence": "Evidence is everywhere and easy to find."
       }
     },
-
     "destructive_size": {
       "size_1": {
         "destructive_potential": "Relatively harmless to people.",
@@ -80,9 +76,7 @@
       }
     }
   },
-
   "EAWS": {
-
     "spatial_distribution": {
       "isolated": {
         "name": "Isolated",
@@ -97,11 +91,9 @@
         "definition": "The hazard is found in more than 30% of the avalanche terrain within the area."
       }
     },
-
-    "avalanche_terrain":{
+    "avalanche_terrain": {
       "name": "Avalanche terrain",
       "definition": "Avalanche terrain generally includes all terrain that has a slopes of more than 25/30? degrees"
     }
-
   }
 }
