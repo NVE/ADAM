@@ -49,12 +49,18 @@
                     </tr>
 
                     <tr>
-                        <th data-toggle="modal" data-target="#modalWidespread">
+                        <th data-toggle="modal" data-target="#modal_widespread">
                             <p id="widespread_l" data-toggle="tooltip" data-placement="top"
                                title="Click for definitions"></p>
                         </th>
-                        <th id="specific_l"></th>
-                        <th id="isolated_l"></th>
+                        <th data-toggle="modal" data-target="#modal_specific">
+                            <p id="specific_l" data-toggle="tooltip" data-placement="top"
+                               title="Click for definitions"></p>
+                        </th>
+                        <th data-toggle="modal" data-target="#modal_isolated">
+                            <p id="isolated_l" data-toggle="tooltip" data-placement="top"
+                               title="Click for definitions"></p>
+                        </th>
                         <th>Size 1</th>
                         <th>Size 2</th>
                         <th>Size 3</th>
@@ -64,7 +70,7 @@
 
                     <tr>
                         <th id="sensitivity_l" rowspan="4" class="vertical"></th>
-                        <th id="touchy_l"></th>
+                        <th id="touchy_l" data-toggle="modal" data-target="#modal_touchy"></th>
                         <td class="vl w3-hover-opacity">Very likely</td>
                         <td class="li w3-hover-opacity">Likely</td>
                         <td class="po">Possible</td>
@@ -78,7 +84,7 @@
                     </tr>
 
                     <tr>
-                        <th id="reactive_l"></th>
+                        <th id="reactive_l" data-toggle="modal" data-target="#modal_reactive"></th>
                         <td class="li">Likely</td>
                         <td class="po">Possible</td>
                         <td class="po">Possible</td>
@@ -91,9 +97,7 @@
                     </tr>
 
                     <tr>
-                        <th data-toggle="modal" data-target="#modal_stubborn">
-                            <p id="stubborn_l" class="axis-info"></p>
-                        </th>
+                        <th id="stubborn_l" data-toggle="modal" data-target="#modal_stubborn"></th>
                         <td class="po">Possible</td>
                         <td class="po">Possible</td>
                         <td class="ul">Unlikely</td>
@@ -106,7 +110,7 @@
                     </tr>
 
                     <tr>
-                        <th id="unreactive_l"></th>
+                        <th id="unreactive_l" data-toggle="modal" data-target="#modal_unreactive"></th>
                         <td class="ul" colspan="3">Unlikely</td>
                         <th>Unlikely</th>
                         <td class="dl1">1</td>
