@@ -30,20 +30,22 @@ var CMAH_def = {
 
     "spatial_distribution": {
         "label": "Spatial distribution",
-        "isolated": {
-            "label": "Isolated",
-            "density": "The instability is spotty and found in only a few terrain features.",
-            "evidence": "Evidence is rare and hard to find."
-        },
-        "specific": {
-            "label": "Specific",
-            "density": "The instability exists in terrain features with common characteristics.",
-            "evidence": "Evidence exists but is not always obvious."
-        },
-        "widespread": {
-            "label": "Widespread",
-            "description_1": "The instability is found in many locations and terrain features.",
-            "description_2": "Evidence is everywhere and easy to find."
+        "classes": {
+            "isolated": {
+                "label": "Isolated",
+                "description_1": "The instability is spotty and found in only a few terrain features.",
+                "description_2": "Evidence is rare and hard to find."
+            },
+            "specific": {
+                "label": "Specific",
+                "description_1": "The instability exists in terrain features with common characteristics.",
+                "description_2": "Evidence exists but is not always obvious."
+            },
+            "widespread": {
+                "label": "Widespread",
+                "description_1": "The instability is found in many locations and terrain features.",
+                "description_2": "Evidence is everywhere and easy to find."
+            }
         }
     }
 };
@@ -55,9 +57,9 @@ function setLabels(ADAMlabels) {
 
 // Setting up ADAM
     //Spatial distribution
-    $("#widespread_l").text(ADAMlabels.spatial_distribution.widespread.label);
-    $("#specific_l").text(ADAMlabels.spatial_distribution.specific.label);
-    $("#isolated_l").text(ADAMlabels.spatial_distribution.isolated.label);
+    $("#widespread_l").text(ADAMlabels.spatial_distribution.classes.widespread.label);
+    $("#specific_l").text(ADAMlabels.spatial_distribution.classes.specific.label);
+    $("#isolated_l").text(ADAMlabels.spatial_distribution.classes.isolated.label);
 
     //Sensitivity to triggers
     $("#sensitivity_l").text(ADAMlabels.sensitivity_to_triggers.label);
@@ -67,28 +69,27 @@ function setLabels(ADAMlabels) {
     $("#unreactive_l").text(ADAMlabels.sensitivity_to_triggers.unreactive.label);
 
 // Setting up the modals
-
-    for (al in ADAMlabels.spatial_distribution) {
-
+    var sdc = ADAMlabels.spatial_distribution.classes;
+    var i;
+    for (i in sdc) {
 
         $("body").append(
-            "<div id=\"modal" + al.label + "\" class=\"modal fade\" role=\"dialog\">" +
+            "<div id=\"modal" + sdc[i].label + "\" class=\"modal fade\" role=\"dialog\">" +
             "<div class=\"modal-dialog\">" +
             "<div class=\"modal-content\">" +
             "<div class=\"modal-header cmah_color\">" +
             "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
-            "<h4 class=\"modal-title\">Spatial Distribution: <u>" + al.label + "</u></h4>" +
+            "<h4 class=\"modal-title\">Spatial Distribution: <u>" + sdc[i].label + "</u></h4>" +
             "</div>" +
             "<div class=\"modal-body\">" +
-            "<p>" + al.description_1 + "</p>" +
-            "<p>" + al.description_2 + "</p>" +
+            "<p>" + sdc[i].description_1 + "</p>" +
+            "<p>" + sdc[i].description_2 + "</p>" +
             "</div>" +
             "</div>" +
             "</div>" +
             "</div>"
         );
     }
-    ;
 
 }
 
