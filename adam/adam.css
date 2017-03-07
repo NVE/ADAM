@@ -1,5 +1,10 @@
+/* http://codepen.io/chriscoyier/pen/pvwmaR */
+
+
 .cmah_color{background: rgb(0, 176, 240);}
 .eaws_color{background: rgb(255, 0, 139);}
+
+
 
 .rcorners {
     /*border-radius: 25px;*/
@@ -27,6 +32,7 @@ th.title {
 th.vertical{
     writing-mode: vertical-lr;
 }
+
 
 td.vl {
     background-color: rgb(50, 50, 50);
@@ -72,6 +78,14 @@ td.dl1 {
 }
 
 
+td.li:hover {
+    background-color: rgb(0, 176, 240);
+    color: white;
+}
+
+tr:hover {
+    background-color: rgb(0, 176, 240);
+}
 
 /*
 
