@@ -2,8 +2,9 @@
  * Created by kmu on 01.11.2016.
  */
 
-var CMAH_def = {
 
+var CMAH_def = {
+    "background_color": "rgb(0, 176, 240)",
     "sensitivity_to_triggers": {
         "label": "Sensitivity to triggers",
         "natural_trigger": "Natural trigger",
@@ -56,7 +57,7 @@ var CMAH_def = {
 
 
 var EAWS_def = {
-
+    "background_color": "rgb(255, 0, 139)",
     "sensitivity_to_triggers": {
         "label": "Sensitivity to triggers",
         "natural_trigger": "Natural trigger",
@@ -94,12 +95,12 @@ var EAWS_def = {
                 "description_2": "Evidence is rare and hard to find."
             },
             "specific": {
-                "label": "Specific",
+                "label": "Some",
                 "description_1": "The instability exists in terrain features with common characteristics.",
                 "description_2": "Evidence exists but is not always obvious."
             },
             "widespread": {
-                "label": "Widespread",
+                "label": "Many",
                 "description_1": "The instability is found in many locations and terrain features.",
                 "description_2": "Evidence is everywhere and easy to find."
             }
@@ -125,6 +126,28 @@ function setLabels(ADAMlabels) {
     $("#reactive_l").text(ADAMlabels.sensitivity_to_triggers.classes.reactive.label);
     $("#stubborn_l").text(ADAMlabels.sensitivity_to_triggers.classes.stubborn.label);
     $("#unreactive_l").text(ADAMlabels.sensitivity_to_triggers.classes.unreactive.label);
+
+
+    $('.tbl_frame').css("background", ADAMlabels.background_color);
+
+
+    $('.tbl_cell').mouseenter(function () {
+        $(this).css({
+            background: ADAMlabels.background_color
+        });
+        $('.dm_vl').css({
+            background: ADAMlabels.background_color
+        });
+    });
+    $('.tbl_cell').mouseleave(function () {
+        $(this).css({
+            background: 'rgb(50, 50, 50)'
+        });
+        // reset colors for DM cells
+    });
+
+    // TODO: remove the li-hover in adam.css and replace with the above solution - http://codepen.io/NatashaPrice/pen/ycFKv
+
 
 // Setting up the modals
     //Spatial distribution
@@ -176,7 +199,6 @@ function setLabels(ADAMlabels) {
 
 
 $(document).ready(function () {
-        //var ADAMlabels = CMAH_def;
 
         setLabels(CMAH_def);
 

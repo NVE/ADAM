@@ -24,9 +24,13 @@ th, td {
     background-color: white;
 }
 
-th.title {
+th.tbl_frame {
     border: 0px solid black;
     background: rgb(0, 176, 240);
+}
+
+td.tbl_cell {
+    border: 1px solid black;
 }
 
 th.vertical{
