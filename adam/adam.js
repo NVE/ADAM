@@ -56,6 +56,112 @@ var CMAH_def = {
 };
 
 
+var ADAM_NO = [
+    {//CMAH [0]
+        "background_color": "rgb(0, 176, 240)",
+        "sensitivity_to_triggers": {
+            "label": "Snødekkestabilitet",
+            "natural_trigger": "Naturlig utløst",
+            "human_trigger": "Menneske utløst",
+            classes: {
+                "unreactive": {
+                    "label": "God",
+                    "natural_trigger": "Ingen snøskred",
+                    "human_trigger": "Lite sannsynlig"
+                },
+                "stubborn": {
+                    "label": "Sånn passe",
+                    "natural_trigger": "Få",
+                    "human_trigger": "Vanskelig å løse ut"
+                },
+                "reactive": {
+                    "label": "Dårlig",
+                    "natural_trigger": "Noen",
+                    "human_trigger": "Lett å løse ut"
+                },
+                "touchy": {
+                    "label": "Elendig",
+                    "natural_trigger": "Mange",
+                    "human_trigger": "Utløsning sannsynlig"
+                }
+            }
+        },
+
+        "spatial_distribution": {
+            "label": "Utbredelse",
+            "classes": {
+                "isolated": {
+                    "label": "Få",
+                    "description_1": "The instability is spotty and found in only a few terrain features.",
+                    "description_2": "Evidence is rare and hard to find."
+                },
+                "specific": {
+                    "label": "Noen",
+                    "description_1": "The instability exists in terrain features with common characteristics.",
+                    "description_2": "Evidence exists but is not always obvious."
+                },
+                "widespread": {
+                    "label": "Mange",
+                    "description_1": "The instability is found in many locations and terrain features.",
+                    "description_2": "Evidence is everywhere and easy to find."
+                }
+            }
+        }
+    },
+    {//EAWS [1]
+        "background_color": "rgb(255, 0, 139)",
+        "sensitivity_to_triggers": {
+            "label": "Sensitivity to triggers",
+            "natural_trigger": "Natural trigger",
+            "human_trigger": "Human trigger",
+            classes: {
+                "unreactive": {
+                    "label": "Generally from high additional load",
+                    "natural_trigger": "No avalanches",
+                    "human_trigger": "No avalanches"
+                },
+                "stubborn": {
+                    "label": "Primarily from high additional load",
+                    "natural_trigger": "Few",
+                    "human_trigger": "Difficult to trigger"
+                },
+                "reactive": {
+                    "label": "With low additional load possible",
+                    "natural_trigger": "Several",
+                    "human_trigger": "Easy to trigger"
+                },
+                "touchy": {
+                    "label": "With low additional load probable",
+                    "natural_trigger": "Numerous",
+                    "human_trigger": " Triggering almost certain"
+                }
+            }
+        },
+
+        "spatial_distribution": {
+            "label": "Spatial distribution",
+            "classes": {
+                "isolated": {
+                    "label": "Isolated",
+                    "description_1": "The instability is spotty and found in only a few terrain features.",
+                    "description_2": "Evidence is rare and hard to find."
+                },
+                "specific": {
+                    "label": "Some",
+                    "description_1": "The instability exists in terrain features with common characteristics.",
+                    "description_2": "Evidence exists but is not always obvious."
+                },
+                "widespread": {
+                    "label": "Many",
+                    "description_1": "The instability is found in many locations and terrain features.",
+                    "description_2": "Evidence is everywhere and easy to find."
+                }
+            }
+        }
+    }
+];
+
+
 var EAWS_def = {
     "background_color": "rgb(255, 0, 139)",
     "sensitivity_to_triggers": {
@@ -208,6 +314,10 @@ $(document).ready(function () {
 
         $("#setEAWS").click(function () {
             setLabels(EAWS_def);
+        });
+
+        $("#langNO").click(function () {
+            setLabels(ADAM_NO[0]);
         });
 
     }

@@ -28,7 +28,12 @@
     },
     "spatial_distribution": {
       "isolated": {
-        "name": "Isolated",
+        "name": {
+          "EN": "Isolated",
+          "NO": "Isolert",
+          "DE": "Einzelne"
+        },
+
         "density": "The instability is spotty and found in only a few terrain features.",
         "evidence": "Evidence is rare and hard to find."
       },
