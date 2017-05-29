@@ -379,6 +379,8 @@ $(document).ready(function () {
             setLabels(ADAM_NO[0]);
         });
 
+        $('[data-toggle="tooltip"]').tooltip();
+
     }
 );
 

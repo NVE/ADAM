@@ -4,7 +4,14 @@
 .cmah_color{background: rgb(0, 176, 240);}
 .eaws_color{background: rgb(255, 0, 139);}
 
-
+/* Tooltip */
+#size_1 + .tooltip > .tooltip-inner {
+    background-color: #73AD21;
+    color: #FFFFFF;
+    border: 1px solid green;
+    padding: 15px;
+    font-size: 20px;
+}
 
 .rcorners {
     /*border-radius: 25px;*/
