@@ -40,12 +40,12 @@
 
                 <table style="width:100%">
                     <tr>
-                        <th colspan="2" rowspan="2" class="tbl_frame">Likelihood Matrix</th>
-                        <th colspan="3">Spatial Distribution</th>
+                        <th colspan="2" rowspan="2" class="tbl_frame" id="likelihood_matrix_l">Likelihood Matrix</th>
+                        <th colspan="3" id="spatial_distribution_l">Spatial Distribution</th>
                         <th rowspan="6" class="tbl_frame"></th>
                         <!-- <th rowspan="6" class="title"></th> -->
-                        <th colspan="2" rowspan="2" class="tbl_frame">Danger Matrix</th>
-                        <th colspan="5">Destructive Avalanche Size</th>
+                        <th colspan="2" rowspan="2" class="tbl_frame" id="danger_matrix_l">Danger Matrix</th>
+                        <th colspan="5" id="avalanche_size_l">Destructive Avalanche Size</th>
                     </tr>
 
                     <tr>
@@ -61,21 +61,21 @@
                             <p id="isolated_l" data-toggle="tooltip" data-placement="top"
                                title="Click for definitions"></p>
                         </th>
-                        <th>Size 1</th>
-                        <th>Size 2</th>
-                        <th>Size 3</th>
-                        <th>Size 4</th>
-                        <th>Size 5</th>
+                        <th id="size_1">Size 1</th>
+                        <th id="size_2">Size 2</th>
+                        <th id="size_3">Size 3</th>
+                        <th id="size_4">Size 4</th>
+                        <th id="size_5">Size 5</th>
                     </tr>
 
                     <tr>
-                        <th id="sensitivity_l" rowspan="4" class="vertical"></th>
+                        <th id="sensitivity_l" rowspan="4">Sensitivity to trigger</th>
                         <th id="touchy_l" data-toggle="modal" data-target="#modal_touchy"></th>
                         <td class="vl tbl_cell">Very likely</td>
                         <td class="li li-hover">Likely</td>
                         <td class="po">Possible</td>
-                        <th rowspan="4" class="vertical">Likelihood of triggering</th>
-                        <th>Very likely</th>
+                        <th rowspan="4" id="likelihood_triggering_l">Likelihood of triggering</th>
+                        <th class="vl">Very likely</th>
                         <td class="dl3 dm_vl">3</td>
                         <td class="dl4 dm_vl">4</td>
                         <td class="dl4 dm_vl">4</td>
@@ -88,7 +88,7 @@
                         <td class="li">Likely</td>
                         <td class="po">Possible</td>
                         <td class="po">Possible</td>
-                        <th>Likely</th>
+                        <th class="li">Likely</th>
                         <td class="dl2">2</td>
                         <td class="dl3">3</td>
                         <td class="dl4">4</td>
@@ -101,7 +101,7 @@
                         <td class="po">Possible</td>
                         <td class="po">Possible</td>
                         <td class="ul">Unlikely</td>
-                        <th>Possible</th>
+                        <th class="po">Possible</th>
                         <td class="dl1">1</td>
                         <td class="dl2">2</td>
                         <td class="dl3">3</td>
@@ -112,7 +112,7 @@
                     <tr>
                         <th id="unreactive_l" data-toggle="modal" data-target="#modal_unreactive"></th>
                         <td class="ul" colspan="3">Unlikely</td>
-                        <th>Unlikely</th>
+                        <th class="ul">Unlikely</th>
                         <td class="dl1">1</td>
                         <td class="dl1">1</td>
                         <td class="dl2">2</td>

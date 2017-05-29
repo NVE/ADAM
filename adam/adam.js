@@ -59,10 +59,22 @@ var CMAH_def = {
 var ADAM_NO = [
     {//CMAH [0]
         "background_color": "rgb(0, 176, 240)",
+        "likelihood_matrix": "Utløsningssannsynlighet",
+        "danger_matrix": "Faregrad",
+
+        "likelihoods": {
+            label: "Utløsningssannsynlighet",
+            classes: {
+                "very_likley": "Meget sannsynlig",
+                "likely": "Sannsynlig",
+                "possible": "Mulig",
+                "unlikely": "Lite sannsynlig"
+            }
+        },
         "sensitivity_to_triggers": {
             "label": "Snødekkestabilitet",
-            "natural_trigger": "Naturlig utløst",
-            "human_trigger": "Menneske utløst",
+            "natural_trigger": "Naturlig utløste snøskred",
+            "human_trigger": "Menneske utløste snøskred",
             classes: {
                 "unreactive": {
                     "label": "God",
@@ -82,7 +94,7 @@ var ADAM_NO = [
                 "touchy": {
                     "label": "Elendig",
                     "natural_trigger": "Mange",
-                    "human_trigger": "Utløsning sannsynlig"
+                    "human_trigger": "Veldig lett å løse ut"
                 }
             }
         },
@@ -92,20 +104,52 @@ var ADAM_NO = [
             "classes": {
                 "isolated": {
                     "label": "Få",
-                    "description_1": "The instability is spotty and found in only a few terrain features.",
-                    "description_2": "Evidence is rare and hard to find."
+                    "description_1": "Ustabil snø er lite utbredt og finnes kun i få (ofte ekstreme) heng.",
+                    "description_2": "Faretegn er sjelden og/eller vanskelig å se."
                 },
                 "specific": {
                     "label": "Noen",
-                    "description_1": "The instability exists in terrain features with common characteristics.",
-                    "description_2": "Evidence exists but is not always obvious."
+                    "description_1": "Ustabil snø finnes i terrengformasjoner med samme karakter.",
+                    "description_2": "Faretegn forekommer med er ikke alltid tydelig."
                 },
                 "widespread": {
                     "label": "Mange",
-                    "description_1": "The instability is found in many locations and terrain features.",
-                    "description_2": "Evidence is everywhere and easy to find."
+                    "description_1": "Ustabil snø finnes i mange heng og terrengformasjoner.",
+                    "description_2": "Det finnes mange og tydelige faretegn."
                 }
             }
+        },
+
+        "avalanche_size": {
+            "label": "Snøskredstørrelse",
+            "classes": {
+                "size_1": {
+                    "label": "Str. 1",
+                    "name": "Små",
+                    "description": "Ufarlig ..."
+                },
+                "size_2": {
+                    "label": "Str. 2",
+                    "name": "Middels store",
+                    "description": "Kan begrave, skade eller drepe et menneske..."
+                },
+                "size_3": {
+                    "label": "Str. 3",
+                    "name": "Store",
+                    "description": "Når enden av henget ..."
+                },
+                "size_4": {
+                    "label": "Str. 4",
+                    "name": "Meget store",
+                    "description": "Ødelegge..."
+                },
+                "size_5": {
+                    "label": "Str. 5",
+                    "name": "Ekstremt store",
+                    "description": "Mother of all avalanches ..."
+                }
+            }
+
         }
     },
     {//EAWS [1]
@@ -220,8 +264,12 @@ function setLabels(ADAMlabels) {
      $("#").text(ADAMlabels.);
      */
 
-// Setting up ADAM
+    // Setting up ADAM
+    $("#likelihood_matrix_l").text(ADAMlabels.likelihood_matrix);
+    $("#danger_matrix_l").text(ADAMlabels.danger_matrix);
+
     //Spatial distribution
+    $("#spatial_distribution_l").text(ADAMlabels.spatial_distribution.label);
     $("#widespread_l").text(ADAMlabels.spatial_distribution.classes.widespread.label);
     $("#specific_l").text(ADAMlabels.spatial_distribution.classes.specific.label);
     $("#isolated_l").text(ADAMlabels.spatial_distribution.classes.isolated.label);
@@ -233,6 +281,20 @@ function setLabels(ADAMlabels) {
     $("#stubborn_l").text(ADAMlabels.sensitivity_to_triggers.classes.stubborn.label);
     $("#unreactive_l").text(ADAMlabels.sensitivity_to_triggers.classes.unreactive.label);
 
+    //Likelihood of triggering
+    $('#likelihood_triggering_l').text(ADAMlabels.likelihoods.label)
+    $(".vl").text(ADAMlabels.likelihoods.classes.very_likley);
+    $(".li").text(ADAMlabels.likelihoods.classes.likely);
+    $(".po").text(ADAMlabels.likelihoods.classes.possible);
+    $(".ul").text(ADAMlabels.likelihoods.classes.unlikely);
+
+    //Avalanche sizes
+    $("#avalanche_size_l").text(ADAMlabels.avalanche_size.label);
+    $("#size_1").text(ADAMlabels.avalanche_size.classes.size_1.label);
+    $("#size_2").text(ADAMlabels.avalanche_size.classes.size_2.label);
+    $("#size_3").text(ADAMlabels.avalanche_size.classes.size_3.label);
+    $("#size_4").text(ADAMlabels.avalanche_size.classes.size_4.label);
+    $("#size_5").text(ADAMlabels.avalanche_size.classes.size_5.label);
 
     $('.tbl_frame').css("background", ADAMlabels.background_color);
 
@@ -241,7 +303,7 @@ function setLabels(ADAMlabels) {
         $(this).css({
             background: ADAMlabels.background_color
         });
-        $('.dm_vl').css({
+        $('.dm_not_vl').css({
             background: ADAMlabels.background_color
         });
     });
@@ -282,31 +344,28 @@ function setLabels(ADAMlabels) {
 
     //Spatial distribution
     var sttc = ADAMlabels.sensitivity_to_triggers.classes;
-    for (i in sttc) {
-
-        $("body").append(
-            "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
-            "<div class=\"modal-dialog\">" +
-            "<div class=\"modal-content\">" +
-            "<div class=\"modal-header cmah_color\">" +
-            "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
-            "<h4 class=\"modal-title\">" + ADAMlabels.sensitivity_to_triggers.label + ": <u>" + sttc[i].label + "</u></h4>" +
-            "</div>" +
-            "<div class=\"modal-body\">" +
-            "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + sttc[i].natural_trigger + "</p>" +
-            "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + sttc[i].human_trigger + "</p>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>"
-        );
-    }
+    for (i in sttc) $("body").append(
+        "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
+        "<div class=\"modal-dialog\">" +
+        "<div class=\"modal-content\">" +
+        "<div class=\"modal-header cmah_color\">" +
+        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
+        "<h4 class=\"modal-title\">" + ADAMlabels.sensitivity_to_triggers.label + ": <u>" + sttc[i].label + "</u></h4>" +
+        "</div>" +
+        "<div class=\"modal-body\">" +
+        "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + sttc[i].natural_trigger + "</p>" +
+        "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + sttc[i].human_trigger + "</p>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>"
+    );
 }
 
 
 $(document).ready(function () {
 
-        setLabels(CMAH_def);
+        setLabels(ADAM_NO[0]);
 
         $("#setCMAH").click(function () {
             setLabels(CMAH_def);
