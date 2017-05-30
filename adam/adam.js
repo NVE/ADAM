@@ -63,8 +63,8 @@ var ADAM_NO = [
         "danger_matrix": "Faregrad",
 
         "likelihoods": {
-            label: "Utløsningssannsynlighet",
-            classes: {
+            "label": "Utløsningssannsynlighet",
+            "classes": {
                 "very_likley": "Meget sannsynlig",
                 "likely": "Sannsynlig",
                 "possible": "Mulig",
@@ -75,7 +75,7 @@ var ADAM_NO = [
             "label": "Snødekkestabilitet",
             "natural_trigger": "Naturlig utløste snøskred",
             "human_trigger": "Menneske utløste snøskred",
-            classes: {
+            "classes": {
                 "unreactive": {
                     "label": "God",
                     "natural_trigger": "Ingen snøskred",
@@ -83,17 +83,17 @@ var ADAM_NO = [
                 },
                 "stubborn": {
                     "label": "Sånn passe",
-                    "natural_trigger": "Få",
+                    "natural_trigger": "Få / et par",
                     "human_trigger": "Vanskelig å løse ut"
                 },
                 "reactive": {
                     "label": "Dårlig",
-                    "natural_trigger": "Noen",
+                    "natural_trigger": "Flere",
                     "human_trigger": "Lett å løse ut"
                 },
                 "touchy": {
                     "label": "Elendig",
-                    "natural_trigger": "Mange",
+                    "natural_trigger": "Mange / tallrike",
                     "human_trigger": "Veldig lett å løse ut"
                 }
             }
@@ -126,27 +126,32 @@ var ADAM_NO = [
                 "size_1": {
                     "label": "Str. 1",
                     "name": "Små",
-                    "description": "Ufarlig ..."
+                    "description_1": "Liten fare for å bli begravet (fare for å falle/bli revet med)",
+                    "description_2": "Utglidning (sluff)"
                 },
                 "size_2": {
                     "label": "Str. 2",
                     "name": "Middels store",
-                    "description": "Kan begrave, skade eller drepe et menneske..."
+                    "description_1": "Kan begrave, skade eller drepe et menneske.",
+                    "description_2": "Stopper i selve henget"
                 },
                 "size_3": {
                     "label": "Str. 3",
                     "name": "Store",
-                    "description": "Når enden av henget ..."
+                    "description": "Kan begrave og ødelegge biler, ødelegge hus eller knekke trær.",
+                    "description_2": "Når enden av henget"
                 },
                 "size_4": {
                     "label": "Str. 4",
-                    "name": "Meget store",
-                    "description": "Ødelegge..."
+                    "name": "Svært store",
+                    "description": "Kan ødelegge tog, flere hus eller skog.",
+                    "description_2": "Krysser flate partier (<<30º) over avstander lengre enn 50 m; kan nå dalbunnen"
                 },
                 "size_5": {
                     "label": "Str. 5",
                     "name": "Ekstremt store",
-                    "description": "Mother of all avalanches ..."
+                    "description": "Kan ødelegge bebyggelse og skog.",
+                    "description_2": "Når dalbunnen."
                 }
             }
 
