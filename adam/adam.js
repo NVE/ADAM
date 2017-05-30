@@ -2,63 +2,159 @@
  * Created by kmu on 01.11.2016.
  */
 
+var ADAMcolors = {
+    "CMAH_background": "rgb(0, 176, 240)",
+    "EAWS_background": "rgb(255, 0, 139)",
+    "dl1_background": "rgb(80, 184, 72)",
+    "dl2_background": "rgb(255, 242, 0)",
+    "dl3_background": "rgb(247, 148, 30)",
+    "dl4_background": "rgb(237, 28, 36)",
+    "dl5_background": "rgb(35, 31, 32)",
+    "vl_background": "rgb(50, 50, 50)",
+    "li_background": "rgb(100, 100, 100)",
+    "po_background": "rgb(150, 150, 150)",
+    "ul_background": "rgb(200, 200, 200)"
+};
 
-var CMAH_def = {
-    "background_color": "rgb(0, 176, 240)",
-    "sensitivity_to_triggers": {
-        "label": "Sensitivity to triggers",
-        "natural_trigger": "Natural trigger",
-        "human_trigger": "Human trigger",
-        classes: {
-            "unreactive": {
-                "label": "Un-reactive",
-                "natural_trigger": "No avalanches",
-                "human_trigger": "No avalanches"
-            },
-            "stubborn": {
-                "label": "Stubborn",
-                "natural_trigger": "Few",
-                "human_trigger": "Difficult to trigger"
-            },
-            "reactive": {
-                "label": "Reactive",
-                "natural_trigger": "Several",
-                "human_trigger": "Easy to trigger"
-            },
-            "touchy": {
-                "label": "Touchy",
-                "natural_trigger": "Numerous",
-                "human_trigger": " Triggering almost certain"
+var ADAM_EN = [
+    {//CMAH
+        "background_color": ADAMcolors.CMAH_background,
+        "drop_term": "Terminology",
+        "drop_lang": "Language",
+        "likelihood_matrix": "Likelihood Matrix",
+        "danger_matrix": "Danger Matrix",
+
+        "likelihoods": {
+            "label": "Likelihood of triggering",
+            "classes": {
+                "very_likley": "Very likley",
+                "likely": "Likely",
+                "possible": "Possible",
+                "unlikely": "Unlikely"
+            }
+        },
+        "sensitivity_to_triggers": {
+            "label": "Sensitivity to triggers",
+            "natural_trigger": "Natural trigger",
+            "human_trigger": "Human trigger",
+            "classes": {
+                "unreactive": {
+                    "label": "Un-reactive",
+                    "natural_trigger": "No avalanches",
+                    "human_trigger": "No avalanches"
+                },
+                "stubborn": {
+                    "label": "Stubborn",
+                    "natural_trigger": "Few",
+                    "human_trigger": "Difficult to trigger"
+                },
+                "reactive": {
+                    "label": "Reactive",
+                    "natural_trigger": "Several",
+                    "human_trigger": "Easy to trigger"
+                },
+                "touchy": {
+                    "label": "Touchy",
+                    "natural_trigger": "Numerous",
+                    "human_trigger": " Triggering almost certain"
+                }
+            }
+        },
+
+        "spatial_distribution": {
+            "label": "Spatial distribution",
+            "classes": {
+                "isolated": {
+                    "label": "Isolated",
+                    "description_1": "The instability is spotty and found in only a few terrain features.",
+                    "description_2": "Evidence is rare and hard to find."
+                },
+                "specific": {
+                    "label": "Specific",
+                    "description_1": "The instability exists in terrain features with common characteristics.",
+                    "description_2": "Evidence exists but is not always obvious."
+                },
+                "widespread": {
+                    "label": "Widespread",
+                    "description_1": "The instability is found in many locations and terrain features.",
+                    "description_2": "Evidence is everywhere and easy to find."
+                }
             }
         }
     },
+    {//EAWS
+        "background_color": ADAMcolors.EAWS_background,
+        "drop_term": "Terminology",
+        "drop_lang": "Language",
+        "likelihood_matrix": "Likelihood Matrix",
+        "danger_matrix": "Danger Matrix",
 
-    "spatial_distribution": {
-        "label": "Spatial distribution",
-        "classes": {
-            "isolated": {
-                "label": "Isolated",
-                "description_1": "The instability is spotty and found in only a few terrain features.",
-                "description_2": "Evidence is rare and hard to find."
-            },
-            "specific": {
-                "label": "Specific",
-                "description_1": "The instability exists in terrain features with common characteristics.",
-                "description_2": "Evidence exists but is not always obvious."
-            },
-            "widespread": {
-                "label": "Widespread",
-                "description_1": "The instability is found in many locations and terrain features.",
-                "description_2": "Evidence is everywhere and easy to find."
+        "likelihoods": {
+            "label": "Likelihood of triggering",
+            "classes": {
+                "very_likley": "Very likley",
+                "likely": "Likely",
+                "possible": "Possible",
+                "unlikely": "Unlikely"
+            }
+        },
+        "sensitivity_to_triggers": {
+            "label": "Sensitivity to triggers",
+            "natural_trigger": "Natural trigger",
+            "human_trigger": "Human trigger",
+            "classes": {
+                "unreactive": {
+                    "label": "Generally from high additional load",
+                    "natural_trigger": "No avalanches",
+                    "human_trigger": "No avalanches"
+                },
+                "stubborn": {
+                    "label": "Primarily from high additional load",
+                    "natural_trigger": "Few",
+                    "human_trigger": "Difficult to trigger"
+                },
+                "reactive": {
+                    "label": "With low additional load possible",
+                    "natural_trigger": "Several",
+                    "human_trigger": "Easy to trigger"
+                },
+                "touchy": {
+                    "label": "With low additional load probable",
+                    "natural_trigger": "Numerous",
+                    "human_trigger": " Triggering almost certain"
+                }
+            }
+        },
+
+        "spatial_distribution": {
+            "label": "Spatial distribution",
+            "classes": {
+                "isolated": {
+                    "label": "Isolated",
+                    "description_1": "The instability is spotty and found in only a few terrain features.",
+                    "description_2": "Evidence is rare and hard to find."
+                },
+                "specific": {
+                    "label": "Some",
+                    "description_1": "The instability exists in terrain features with common characteristics.",
+                    "description_2": "Evidence exists but is not always obvious."
+                },
+                "widespread": {
+                    "label": "Many",
+                    "description_1": "The instability is found in many locations and terrain features.",
+                    "description_2": "Evidence is everywhere and easy to find."
+                }
             }
         }
     }
-};
+];
 
 
 var ADAM_NO = [
     {//CMAH [0]
-        "background_color": "rgb(0, 176, 240)",
+        "background_color": ADAMcolors.CMAH_background,
+        "drop_term": "Terminologi",
+        "drop_lang": "Språk",
         "likelihood_matrix": "Utløsningssannsynlighet",
         "danger_matrix": "Faregrad",
 
@@ -122,6 +218,8 @@ var ADAM_NO = [
 
         "avalanche_size": {
             "label": "Snøskredstørrelse",
+            "description_1": "Beskrivelse",
+            "description_2": "Utløpsklassifisering",
             "classes": {
                 "size_1": {
                     "label": "Str. 1",
@@ -138,19 +236,19 @@ var ADAM_NO = [
                 "size_3": {
                     "label": "Str. 3",
                     "name": "Store",
-                    "description": "Kan begrave og ødelegge biler, ødelegge hus eller knekke trær.",
+                    "description_1": "Kan begrave og ødelegge biler, ødelegge hus eller knekke trær.",
                     "description_2": "Når enden av henget"
                 },
                 "size_4": {
                     "label": "Str. 4",
                     "name": "Svært store",
-                    "description": "Kan ødelegge tog, flere hus eller skog.",
+                    "description_1": "Kan ødelegge tog, flere hus eller skog.",
                     "description_2": "Krysser flate partier (<<30º) over avstander lengre enn 50 m; kan nå dalbunnen"
                 },
                 "size_5": {
                     "label": "Str. 5",
                     "name": "Ekstremt store",
-                    "description": "Kan ødelegge bebyggelse og skog.",
+                    "description_1": "Kan ødelegge bebyggelse og skog.",
                     "description_2": "Når dalbunnen."
                 }
             }
@@ -158,12 +256,14 @@ var ADAM_NO = [
         }
     },
     {//EAWS [1]
-        "background_color": "rgb(255, 0, 139)",
+        "background_color": ADAMcolors.EAWS_background,
+        "drop_term": "Terminologi",
+        "drop_lang": "Språk",
         "sensitivity_to_triggers": {
             "label": "Sensitivity to triggers",
             "natural_trigger": "Natural trigger",
             "human_trigger": "Human trigger",
-            classes: {
+            "classes": {
                 "unreactive": {
                     "label": "Generally from high additional load",
                     "natural_trigger": "No avalanches",
@@ -211,65 +311,10 @@ var ADAM_NO = [
 ];
 
 
-var EAWS_def = {
-    "background_color": "rgb(255, 0, 139)",
-    "sensitivity_to_triggers": {
-        "label": "Sensitivity to triggers",
-        "natural_trigger": "Natural trigger",
-        "human_trigger": "Human trigger",
-        classes: {
-            "unreactive": {
-                "label": "Generally from high additional load",
-                "natural_trigger": "No avalanches",
-                "human_trigger": "No avalanches"
-            },
-            "stubborn": {
-                "label": "Primarily from high additional load",
-                "natural_trigger": "Few",
-                "human_trigger": "Difficult to trigger"
-            },
-            "reactive": {
-                "label": "With low additional load possible",
-                "natural_trigger": "Several",
-                "human_trigger": "Easy to trigger"
-            },
-            "touchy": {
-                "label": "With low additional load probable",
-                "natural_trigger": "Numerous",
-                "human_trigger": " Triggering almost certain"
-            }
-        }
-    },
-
-    "spatial_distribution": {
-        "label": "Spatial distribution",
-        "classes": {
-            "isolated": {
-                "label": "Isolated",
-                "description_1": "The instability is spotty and found in only a few terrain features.",
-                "description_2": "Evidence is rare and hard to find."
-            },
-            "specific": {
-                "label": "Some",
-                "description_1": "The instability exists in terrain features with common characteristics.",
-                "description_2": "Evidence exists but is not always obvious."
-            },
-            "widespread": {
-                "label": "Many",
-                "description_1": "The instability is found in many locations and terrain features.",
-                "description_2": "Evidence is everywhere and easy to find."
-            }
-        }
-    }
-};
-
-
 function setLabels(ADAMlabels) {
-    /*
-     $("#").text(ADAMlabels.);
-     */
-
-    // Setting up ADAM
+    /////////////////////
+    // Setting up ADAM //
+    /////////////////////
     $("#likelihood_matrix_l").text(ADAMlabels.likelihood_matrix);
     $("#danger_matrix_l").text(ADAMlabels.danger_matrix);
 
@@ -304,30 +349,35 @@ function setLabels(ADAMlabels) {
     $('.tbl_frame').css("background", ADAMlabels.background_color);
 
 
-    $('.tbl_cell').mouseenter(function () {
-        $(this).css({
-            background: ADAMlabels.background_color
-        });
-        $('.dm_not_vl').css({
-            background: ADAMlabels.background_color
-        });
+    $('td.vl').mouseenter(function () {
+        $(this).css({background: ADAMlabels.background_color});
+        $('.dm_not_vl').css({opacity: 0.2});
     });
-    $('.tbl_cell').mouseleave(function () {
-        $(this).css({
-            background: 'rgb(50, 50, 50)'
-        });
-        // reset colors for DM cells
+    $('td.vl').mouseleave(function () {
+        $(this).css({background: ADAMcolors.vl_background});
+        $('.dm_not_vl').css({opacity: 1});
+        // $('.dl1').css({background: ADAMcolors.dl1_background});
+        // $('.dl2').css({background: ADAMcolors.dl2_background});
+        // $('.dl3').css({background: ADAMcolors.dl3_background});
+        // $('.dl4').css({background: ADAMcolors.dl4_background});
+        // $('.dl5').css({background: ADAMcolors.dl5_background});
     });
 
-    // TODO: remove the li-hover in adam.css and replace with the above solution - http://codepen.io/NatashaPrice/pen/ycFKv
+    /////////////////////////////
+    // Set the drop-down menus //
+    /////////////////////////////
+    $("#drop_term").html(ADAMlabels.drop_term + "<span class=\"caret\"></span>");
+    //$("#drop_lang").html(ADAMlabels.drop_lang + "<span class=\"caret\"></span>");
+    $("#drop_lang").text(ADAMlabels.drop_lang);
 
+    ///////////////////////////
+    // Setting up the modals //
+    ///////////////////////////
+    var i;
 
-// Setting up the modals
     //Spatial distribution
     var sdc = ADAMlabels.spatial_distribution.classes;
-    var i;
     for (i in sdc) {
-
         $("body").append(
             "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
             "<div class=\"modal-dialog\">" +
@@ -345,7 +395,6 @@ function setLabels(ADAMlabels) {
             "</div>"
         );
     }
-
 
     //Spatial distribution
     var sttc = ADAMlabels.sensitivity_to_triggers.classes;
@@ -365,26 +414,56 @@ function setLabels(ADAMlabels) {
         "</div>" +
         "</div>"
     );
+
+    //Avalanche size
+    var asc = ADAMlabels.avalanche_size.classes;
+    for (i in asc) {
+        $("body").append(
+            "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
+            "<div class=\"modal-dialog\">" +
+            "<div class=\"modal-content\">" +
+            "<div class=\"modal-header cmah_color\">" +
+            "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
+            "<h4 class=\"modal-title\">" + ADAMlabels.avalanche_size.label + ": <u>" + asc[i].label + "</u> (" + asc[i].name + ")</h4>" +
+            "</div>" +
+            "<div class=\"modal-body\">" +
+            "<p><b>" + ADAMlabels.avalanche_size.description_1 + ":</b> " + asc[i].description_1 + "</p>" +
+            "<p><b>" + ADAMlabels.avalanche_size.description_2 + ":</b> " + asc[i].description_2 + "</p>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>"
+        );
+    }
 }
 
 
 $(document).ready(function () {
+        var term_select = 0;
+        var ADAMlabels = ADAM_NO;
 
-        setLabels(ADAM_NO[0]);
+        setLabels(ADAMlabels[term_select]);
 
         $("#setCMAH").click(function () {
-            setLabels(CMAH_def);
+            term_select = 0;
+            setLabels(ADAMlabels[term_select]);
         });
 
         $("#setEAWS").click(function () {
-            setLabels(EAWS_def);
+            term_select = 1;
+            setLabels(ADAMlabels[term_select]);
+        });
+
+        $("#langEN").click(function () {
+            ADAMlabels = ADAM_EN;
+            setLabels(ADAMlabels[term_select]);
         });
 
         $("#langNO").click(function () {
-            setLabels(ADAM_NO[0]);
+            ADAMlabels = ADAM_NO;
+            setLabels(ADAMlabels[term_select]);
         });
 
-        $('[data-toggle="tooltip"]').tooltip();
 
     }
 );

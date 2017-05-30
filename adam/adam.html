@@ -61,21 +61,21 @@
                             <p id="isolated_l" data-toggle="tooltip" data-placement="top"
                                title="Click for definitions"></p>
                         </th>
-                        <th id="size_1" data-toggle="tooltip" title="Small">Size 1</th>
-                        <th id="size_2">Size 2</th>
-                        <th id="size_3">Size 3</th>
-                        <th id="size_4">Size 4</th>
-                        <th id="size_5">Size 5</th>
+                        <th id="size_1" data-toggle="modal" data-target="#modal_size_1">Size 1</th>
+                        <th id="size_2" data-toggle="modal" data-target="#modal_size_2">Size 2</th>
+                        <th id="size_3" data-toggle="modal" data-target="#modal_size_3">Size 3</th>
+                        <th id="size_4" data-toggle="modal" data-target="#modal_size_4">Size 4</th>
+                        <th id="size_5" data-toggle="modal" data-target="#modal_size_5">Size 5</th>
                     </tr>
 
                     <tr>
                         <th id="sensitivity_l" rowspan="4">Sensitivity to trigger</th>
                         <th id="touchy_l" data-toggle="modal" data-target="#modal_touchy"></th>
                         <td class="vl tbl_cell">Very likely</td>
-                        <td class="li li-hover">Likely</td>
+                        <td class="li">Likely</td>
                         <td class="po">Possible</td>
                         <th rowspan="4" id="likelihood_triggering_l">Likelihood of triggering</th>
-                        <th class="vl">Very likely</th>
+                        <th class="vl active">Very likely</th>
                         <td class="dl3 dm_vl">3</td>
                         <td class="dl4 dm_vl">4</td>
                         <td class="dl4 dm_vl">4</td>
@@ -89,11 +89,11 @@
                         <td class="po">Possible</td>
                         <td class="po">Possible</td>
                         <th class="li">Likely</th>
-                        <td class="dl2">2</td>
-                        <td class="dl3">3</td>
-                        <td class="dl4">4</td>
-                        <td class="dl4">4</td>
-                        <td class="dl5">5</td>
+                        <td class="dl2 dm_not_vl">2</td>
+                        <td class="dl3 dm_not_vl">3</td>
+                        <td class="dl4 dm_not_vl">4</td>
+                        <td class="dl4 dm_not_vl">4</td>
+                        <td class="dl5 dm_not_vl">5</td>
                     </tr>
 
                     <tr>
@@ -102,22 +102,22 @@
                         <td class="po">Possible</td>
                         <td class="ul">Unlikely</td>
                         <th class="po">Possible</th>
-                        <td class="dl1">1</td>
-                        <td class="dl2">2</td>
-                        <td class="dl3">3</td>
-                        <td class="dl4">4</td>
-                        <td class="dl4">4</td>
+                        <td class="dl1 dm_not_vl">1</td>
+                        <td class="dl2 dm_not_vl">2</td>
+                        <td class="dl3 dm_not_vl">3</td>
+                        <td class="dl4 dm_not_vl">4</td>
+                        <td class="dl4 dm_not_vl">4</td>
                     </tr>
 
                     <tr>
                         <th id="unreactive_l" data-toggle="modal" data-target="#modal_unreactive"></th>
                         <td class="ul" colspan="3">Unlikely</td>
                         <th class="ul">Unlikely</th>
-                        <td class="dl1">1</td>
-                        <td class="dl1">1</td>
-                        <td class="dl2">2</td>
-                        <td class="dl3">3</td>
-                        <td class="dl4">4</td>
+                        <td class="dl1 dm_not_vl">1</td>
+                        <td class="dl1 dm_not_vl">1</td>
+                        <td class="dl2 dm_not_vl">2</td>
+                        <td class="dl3 dm_not_vl">3</td>
+                        <td class="dl4 dm_not_vl">4</td>
                     </tr>
                 </table>
 
@@ -143,8 +143,8 @@
             <div class="btn-group" role="group" aria-label="...">
 
                 <div class="btn-group" role="group">
-                    <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
-                        Choose terminology<span class="caret"></span>
+                    <button id="drop_term" class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                        Terminology<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a id="setCMAH">CMAH</a></li>
@@ -154,15 +154,15 @@
 
 
                 <div class="btn-group" role="group">
-                    <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
-                        Choose language<span class="caret"></span>
+                    <button id="drop_lang" class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                        Language<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">German</a></li>
-                        <li><a href="#">French</a></li>
-                        <li><a href="#">Italian</a></li>
-                        <li><a id="langNO">Norwegian</a></li>
+                        <li><a id="langEN">EN</a></li>
+                        <li class="disabled"><a id="langDE">DE</a></li>
+                        <li class="disabled"><a id="langFR">FR</a></li>
+                        <li class="disabled"><a id="langIT">IT</a></li>
+                        <li><a id="langNO">NO</a></li>
                     </ul>
                 </div>
             </div>
