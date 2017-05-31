@@ -5,6 +5,7 @@
 var ADAMcolors = {
     "CMAH_background": "rgb(0, 176, 240)",
     "EAWS_background": "rgb(255, 0, 139)",
+    "selected": "rgb(237, 128, 136)",
     "dl1_background": "rgb(80, 184, 72)",
     "dl2_background": "rgb(255, 242, 0)",
     "dl3_background": "rgb(247, 148, 30)",
@@ -349,13 +350,15 @@ function setLabels(ADAMlabels) {
     $('.tbl_frame').css("background", ADAMlabels.background_color);
 
 
-    $('td.vl').mouseenter(function () {
-        $(this).css({background: ADAMlabels.background_color});
-        $('.dm_not_vl').css({opacity: 0.2});
+    $('#touchy-widespread').click(function () {
+        //$(this).css({border: "2px solid red"});
+        //$('.li, .po, .ul').css({opacity: 0.2});
+        $('#widespread_l, #touchy_l, #verylikely_l').css({background: ADAMcolors.selected});
     });
     $('td.vl').mouseleave(function () {
-        $(this).css({background: ADAMcolors.vl_background});
-        $('.dm_not_vl').css({opacity: 1});
+        //$(this).css({border: "1px solid black"});
+        //$('.li, .po, .ul').css({opacity: 1});
+        $('#widespread_l, #touchy_l, #verylikely_l').css({background: "white"});
         // $('.dl1').css({background: ADAMcolors.dl1_background});
         // $('.dl2').css({background: ADAMcolors.dl2_background});
         // $('.dl3').css({background: ADAMcolors.dl3_background});

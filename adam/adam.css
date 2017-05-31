@@ -19,6 +19,11 @@
     padding: 16px;
 }
 
+[data-toggle="modal"] {
+    /*text-decoration: underline; */
+    cursor: help;
+}
+
 table, th, td {
 
     border-collapse: collapse;
@@ -29,6 +34,8 @@ th, td {
     padding: 15px;
     text-align: center;
     background-color: white;
+    height: 70px;
+    width: 70px;
 }
 
 th.tbl_frame {
@@ -36,15 +43,11 @@ th.tbl_frame {
     background: rgb(0, 176, 240);
 }
 
-td.tbl_cell {
-    border: 1px solid black;
-}
-
 th.text-vertical{
     transform: rotate(-90deg);
 }
 
-
+/*Remove td to adjust bkg-color of th items */
 td.vl {
     background-color: rgb(50, 50, 50);
     color: white;
@@ -52,7 +55,6 @@ td.vl {
 
 td.li {
     background-color: rgb(100, 100, 100);
-
 }
 
 td.po {
@@ -63,29 +65,25 @@ td.ul {
     background-color: rgb(200, 200, 200);
 }
 
-td.dl5 {
+.dl5 {
     background-color: rgb(35, 31, 32);
     color: white;
 }
 
-td.dl4 {
+.dl4 {
     background-color: rgb(237, 28, 36);
-    text-align: center;
 }
 
-td.dl3 {
+.dl3 {
     background-color: rgb(247, 148, 30);
-    text-align: center;
 }
 
-td.dl2 {
+.dl2 {
     background-color: rgb(255, 242, 0);
-    text-align: center;
 }
 
-td.dl1 {
+.dl1 {
     background-color: rgb(80, 184, 72);
-    text-align: center;
 }
 
 /*
