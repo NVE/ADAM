@@ -1,8 +1,12 @@
 /* http://codepen.io/chriscoyier/pen/pvwmaR */
 
+.cmah_color {
+    background: rgb(0, 176, 240);
+}
 
-.cmah_color{background: rgb(0, 176, 240);}
-.eaws_color{background: rgb(255, 0, 139);}
+.eaws_color {
+    background: rgb(255, 0, 139);
+}
 
 /* Tooltip */
 #size_1 + .tooltip > .tooltip-inner {
@@ -21,7 +25,7 @@
 
 [data-toggle="modal"] {
     /*text-decoration: underline; */
-    cursor: help;
+    cursor: pointer;
 }
 
 table, th, td {
@@ -43,11 +47,12 @@ th.tbl_frame {
     background: rgb(0, 176, 240);
 }
 
-th.text-vertical{
+th.text-vertical {
     transform: rotate(-90deg);
 }
 
 /*Remove td to adjust bkg-color of th items */
+
 td.vl {
     background-color: rgb(50, 50, 50);
     color: white;

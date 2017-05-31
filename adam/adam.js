@@ -160,7 +160,7 @@ var ADAM_NO = [
         "danger_matrix": "Faregrad",
 
         "likelihoods": {
-            "label": "Utløsningssannsynlighet",
+            "label": "Utløsnings- sannsynlighet",
             "classes": {
                 "very_likley": "Meget sannsynlig",
                 "likely": "Sannsynlig",
@@ -169,7 +169,7 @@ var ADAM_NO = [
             }
         },
         "sensitivity_to_triggers": {
-            "label": "Snødekkestabilitet",
+            "label": "Snødekke- stabilitet",
             "natural_trigger": "Naturlig utløste snøskred",
             "human_trigger": "Menneske utløste snøskred",
             "classes": {
@@ -350,21 +350,128 @@ function setLabels(ADAMlabels) {
     $('.tbl_frame').css("background", ADAMlabels.background_color);
 
 
-    $('#touchy-widespread').click(function () {
-        //$(this).css({border: "2px solid red"});
-        //$('.li, .po, .ul').css({opacity: 0.2});
-        $('#widespread_l, #touchy_l, #verylikely_l').css({background: ADAMcolors.selected});
+    // $('#touchy-widespread').click(function () {
+    //     //$(this).css({border: "2px solid red"});
+    //     //$('.li, .po, .ul').css({opacity: 0.2});
+    //     $('#widespread_l, #touchy_l, #verylikely_l').css({background: ADAMcolors.selected});
+    // });
+    // $('td.vl').mouseleave(function () {
+    //     //$(this).css({border: "1px solid black"});
+    //     //$('.li, .po, .ul').css({opacity: 1});
+    //     $('#widespread_l, #touchy_l, #verylikely_l').css({background: "white"});
+    //     // $('.dl1').css({background: ADAMcolors.dl1_background});
+    //     // $('.dl2').css({background: ADAMcolors.dl2_background});
+    //     // $('.dl3').css({background: ADAMcolors.dl3_background});
+    //     // $('.dl4').css({background: ADAMcolors.dl4_background});
+    //     // $('.dl5').css({background: ADAMcolors.dl5_background});
+    // });
+    
+    
+    $('#isolated_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.spatial_distribution.label +
+            ": <u>" + ADAMlabels.spatial_distribution.classes.isolated.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.spatial_distribution.classes.isolated.description_1 + "</p>" +
+            "<p>" + ADAMlabels.spatial_distribution.classes.isolated.description_2 + "</p>"
+        );
     });
-    $('td.vl').mouseleave(function () {
-        //$(this).css({border: "1px solid black"});
-        //$('.li, .po, .ul').css({opacity: 1});
-        $('#widespread_l, #touchy_l, #verylikely_l').css({background: "white"});
-        // $('.dl1').css({background: ADAMcolors.dl1_background});
-        // $('.dl2').css({background: ADAMcolors.dl2_background});
-        // $('.dl3').css({background: ADAMcolors.dl3_background});
-        // $('.dl4').css({background: ADAMcolors.dl4_background});
-        // $('.dl5').css({background: ADAMcolors.dl5_background});
+    $('#isolated_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
     });
+    
+    $('#specific_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.spatial_distribution.label +
+            ": <u>" + ADAMlabels.spatial_distribution.classes.specific.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.spatial_distribution.classes.specific.description_1 + "</p>" +
+            "<p>" + ADAMlabels.spatial_distribution.classes.specific.description_2 + "</p>"
+        );
+    });
+    $('#specific_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+
+    $('#widespread_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.spatial_distribution.label +
+            ": <u>" + ADAMlabels.spatial_distribution.classes.widespread.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_1 + "</p>" +
+            "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_2 + "</p>"
+        );
+    });
+    $('#widespread_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+
+    $('#touchy_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.sensitivity_to_triggers.label +
+            ": <u>" + ADAMlabels.sensitivity_to_triggers.classes.touchy.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.touchy.natural_trigger + "</p>" +
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.touchy.human_trigger + "</p>"
+        );
+    });
+    $('#touchy_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#reactive_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.sensitivity_to_triggers.label +
+            ": <u>" + ADAMlabels.sensitivity_to_triggers.classes.reactive.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.reactive.natural_trigger + "</p>" +
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.reactive.human_trigger + "</p>"
+        );
+    });
+    $('#reactive_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#stubborn_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.sensitivity_to_triggers.label +
+            ": <u>" + ADAMlabels.sensitivity_to_triggers.classes.stubborn.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.stubborn.natural_trigger + "</p>" +
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.stubborn.human_trigger + "</p>"
+        );
+    });
+    $('#stubborn_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#unreactive_l').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.sensitivity_to_triggers.label +
+            ": <u>" + ADAMlabels.sensitivity_to_triggers.classes.unreactive.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.unreactive.natural_trigger + "</p>" +
+            "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + ADAMlabels.sensitivity_to_triggers.classes.unreactive.human_trigger + "</p>"
+        );
+    });
+    $('#unreactive_l').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+
 
     /////////////////////////////
     // Set the drop-down menus //
@@ -444,6 +551,8 @@ function setLabels(ADAMlabels) {
 $(document).ready(function () {
         var term_select = 0;
         var ADAMlabels = ADAM_NO;
+
+        //$('#info-box').hide();
 
         setLabels(ADAMlabels[term_select]);
 
