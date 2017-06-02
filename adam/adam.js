@@ -207,7 +207,7 @@ var ADAM_NO = [
                 "specific": {
                     "label": "Noen",
                     "description_1": "Ustabil snø finnes i terrengformasjoner med samme karakter.",
-                    "description_2": "Faretegn forekommer med er ikke alltid tydelig."
+                    "description_2": "Faretegn forekommer men er ikke alltid tydelig."
                 },
                 "widespread": {
                     "label": "Mange",
@@ -366,7 +366,7 @@ function setLabels(ADAMlabels) {
     //     // $('.dl5').css({background: ADAMcolors.dl5_background});
     // });
     
-    
+    // Spatial distribution
     $('#isolated_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -405,13 +405,15 @@ function setLabels(ADAMlabels) {
         );
         $('#info-box-body').html(
             "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_1 + "</p>" +
-            "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_2 + "</p>"
+            "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_2 + "</p>" +
+                "<img src='images/distr_widespread.png'>"
         );
     });
     $('#widespread_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
 
+    // Sensitivity
     $('#touchy_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -471,6 +473,83 @@ function setLabels(ADAMlabels) {
     $('#unreactive_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+
+    // Avalanche size
+    $('#size_1').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.avalanche_size.label +
+            ": <u>" + ADAMlabels.avalanche_size.classes.size_1.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.avalanche_size.classes.size_1.description_1 + "</p>" +
+            "<p>" + ADAMlabels.avalanche_size.classes.size_1.description_2 + "</p>"
+        );
+    });
+    $('#size_1').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#size_2').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.avalanche_size.label +
+            ": <u>" + ADAMlabels.avalanche_size.classes.size_2.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.avalanche_size.classes.size_2.description_1 + "</p>" +
+            "<p>" + ADAMlabels.avalanche_size.classes.size_2.description_2 + "</p>"
+        );
+    });
+    $('#size_2').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#size_3').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.avalanche_size.label +
+            ": <u>" + ADAMlabels.avalanche_size.classes.size_3.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.avalanche_size.classes.size_3.description_1 + "</p>" +
+            "<p>" + ADAMlabels.avalanche_size.classes.size_3.description_2 + "</p>"
+        );
+    });
+    $('#size_3').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#size_4').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.avalanche_size.label +
+            ": <u>" + ADAMlabels.avalanche_size.classes.size_4.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.avalanche_size.classes.size_4.description_1 + "</p>" +
+            "<p>" + ADAMlabels.avalanche_size.classes.size_4.description_2 + "</p>"
+        );
+    });
+    $('#size_4').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
+    $('#size_5').mouseenter(function () {
+        $('#info-box').css({visibility: "visible"});
+        $('#info-box-heading').html(
+            ADAMlabels.avalanche_size.label +
+            ": <u>" + ADAMlabels.avalanche_size.classes.size_5.label + "</u>"
+        );
+        $('#info-box-body').html(
+            "<p>" + ADAMlabels.avalanche_size.classes.size_5.description_1 + "</p>" +
+            "<p>" + ADAMlabels.avalanche_size.classes.size_5.description_2 + "</p>"
+        );
+    });
+    $('#size_5').mouseleave(function () {
+        $('#info-box').css({visibility: "hidden"});
+    });
+    
 
 
     /////////////////////////////
@@ -552,7 +631,7 @@ $(document).ready(function () {
         var term_select = 0;
         var ADAMlabels = ADAM_NO;
 
-        //$('#info-box').hide();
+        $('#info-box').css({visibility: "hidden"});
 
         setLabels(ADAMlabels[term_select]);
 
