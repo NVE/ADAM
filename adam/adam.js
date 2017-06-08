@@ -405,8 +405,8 @@ function setLabels(ADAMlabels) {
         );
         $('#info-box-body').html(
             "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_1 + "</p>" +
-            "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_2 + "</p>" +
-                "<img src='images/distr_widespread.png'>"
+            "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_2 + "</p>"// +
+               // "<img src='images/distr_widespread.png'>"
         );
     });
     $('#widespread_l').mouseleave(function () {
@@ -555,9 +555,9 @@ function setLabels(ADAMlabels) {
     /////////////////////////////
     // Set the drop-down menus //
     /////////////////////////////
-    $("#drop_term").html(ADAMlabels.drop_term + "<span class=\"caret\"></span>");
-    //$("#drop_lang").html(ADAMlabels.drop_lang + "<span class=\"caret\"></span>");
-    $("#drop_lang").text(ADAMlabels.drop_lang);
+    $("#drop_term").html(ADAMlabels.drop_term + '<span class=\"caret\"></span>');
+    $("#drop_lang").html(ADAMlabels.drop_lang + '<span class=\"caret\"></span>');
+    //$("#drop_lang").text(ADAMlabels.drop_lang);
 
     ///////////////////////////
     // Setting up the modals //
