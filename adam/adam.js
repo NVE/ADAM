@@ -557,73 +557,7 @@ function setLabels(ADAMlabels) {
     /////////////////////////////
     $("#drop_term").html(ADAMlabels.drop_term + '<span class=\"caret\"></span>');
     $("#drop_lang").html(ADAMlabels.drop_lang + '<span class=\"caret\"></span>');
-    //$("#drop_lang").text(ADAMlabels.drop_lang);
 
-    ///////////////////////////
-    // Setting up the modals //
-    ///////////////////////////
-    var i;
-
-    //Spatial distribution
-    var sdc = ADAMlabels.spatial_distribution.classes;
-    for (i in sdc) {
-        $("body").append(
-            "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
-            "<div class=\"modal-dialog\">" +
-            "<div class=\"modal-content\">" +
-            "<div class=\"modal-header cmah_color\">" +
-            "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
-            "<h4 class=\"modal-title\">" + ADAMlabels.spatial_distribution.label + ": <u>" + sdc[i].label + "</u></h4>" +
-            "</div>" +
-            "<div class=\"modal-body\">" +
-            "<p>" + sdc[i].description_1 + "</p>" +
-            "<p>" + sdc[i].description_2 + "</p>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>"
-        );
-    }
-
-    //Spatial distribution
-    var sttc = ADAMlabels.sensitivity_to_triggers.classes;
-    for (i in sttc) $("body").append(
-        "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
-        "<div class=\"modal-dialog\">" +
-        "<div class=\"modal-content\">" +
-        "<div class=\"modal-header cmah_color\">" +
-        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
-        "<h4 class=\"modal-title\">" + ADAMlabels.sensitivity_to_triggers.label + ": <u>" + sttc[i].label + "</u></h4>" +
-        "</div>" +
-        "<div class=\"modal-body\">" +
-        "<p><b>" + ADAMlabels.sensitivity_to_triggers.natural_trigger + ":</b> " + sttc[i].natural_trigger + "</p>" +
-        "<p><b>" + ADAMlabels.sensitivity_to_triggers.human_trigger + ":</b> " + sttc[i].human_trigger + "</p>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>"
-    );
-
-    //Avalanche size
-    var asc = ADAMlabels.avalanche_size.classes;
-    for (i in asc) {
-        $("body").append(
-            "<div id=\"modal_" + i + "\" class=\"modal fade\" role=\"dialog\">" +
-            "<div class=\"modal-dialog\">" +
-            "<div class=\"modal-content\">" +
-            "<div class=\"modal-header cmah_color\">" +
-            "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
-            "<h4 class=\"modal-title\">" + ADAMlabels.avalanche_size.label + ": <u>" + asc[i].label + "</u> (" + asc[i].name + ")</h4>" +
-            "</div>" +
-            "<div class=\"modal-body\">" +
-            "<p><b>" + ADAMlabels.avalanche_size.description_1 + ":</b> " + asc[i].description_1 + "</p>" +
-            "<p><b>" + ADAMlabels.avalanche_size.description_2 + ":</b> " + asc[i].description_2 + "</p>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>"
-        );
-    }
 }
 
 
