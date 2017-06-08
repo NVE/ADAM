@@ -81,6 +81,45 @@ var ADAM_EN = [
                     "description_2": "Evidence is everywhere and easy to find."
                 }
             }
+        },
+
+        "avalanche_size": {
+            "label": "Avalanche size",
+            "description_1": "Damage potential",
+            "description_2": "Run-out",
+            "classes": {
+                "size_1": {
+                    "label": "Size 1",
+                    "name": "Small",
+                    "description_1": "Minimal danger of burying (danger of falling).",
+                    "description_2": "Snow relocation typically stops before the end of a slope."
+                },
+                "size_2": {
+                    "label": "Size 2",
+                    "name": "Medium",
+                    "description_1": "Could bury, injure or kill a person.",
+                    "description_2": "Snow avalanche stops typically at the end of a slope."
+                },
+                "size_3": {
+                    "label": "Size 3",
+                    "name": "Large",
+                    "description_1": "Could bury and destroy a car, damage a truck; destroy a small building or break a few trees.",
+                    "description_2": "Snow avalanche could traverse flat terrain (considerably below 30°) over distances of less than 50 m."
+                },
+                "size_4": {
+                    "label": "Size 4",
+                    "name": "Very large",
+                    "description_1": "Could bury and destroy a railway car, large truck, several buildings or a piece of forest.",
+                    "description_2": "Snow avalanche traverses flat terrain (considerably below 30°) over distances more than 50 m and can reach valley ground."
+                },
+                "size_5": {
+                    "label": "Size 5",
+                    "name": "Extreme",
+                    "description_1": "Could gouge the landscape; disastrous damage potential.",
+                    "description_2": "Snow avalanche reaches valley ground; largest runout distance known."
+                }
+            }
+
         }
     },
     {//EAWS
@@ -100,7 +139,7 @@ var ADAM_EN = [
             }
         },
         "sensitivity_to_triggers": {
-            "label": "Sensitivity to triggers",
+            "label": "Additional loading",
             "natural_trigger": "Natural trigger",
             "human_trigger": "Human trigger",
             "classes": {
@@ -146,6 +185,45 @@ var ADAM_EN = [
                     "description_2": "Evidence is everywhere and easy to find."
                 }
             }
+        },
+        
+        "avalanche_size": {
+            "label": "Avalanche size",
+            "description_1": "Damage potential",
+            "description_2": "Run-out",
+            "classes": {
+                "size_1": {
+                    "label": "Size 1",
+                    "name": "Small",
+                    "description_1": "Minimal danger of burying (danger of falling).",
+                    "description_2": "Snow relocation typically stops before the end of a slope."
+                },
+                "size_2": {
+                    "label": "Size 2",
+                    "name": "Medium",
+                    "description_1": "Could bury, injure or kill a person.",
+                    "description_2": "Snow avalanche stops typically at the end of a slope."
+                },
+                "size_3": {
+                    "label": "Size 3",
+                    "name": "Large",
+                    "description_1": "Could bury and destroy a car, damage a truck; destroy a small building or break a few trees.",
+                    "description_2": "Snow avalanche could traverse flat terrain (considerably below 30°) over distances of less than 50 m."
+                },
+                "size_4": {
+                    "label": "Size 4",
+                    "name": "Very large",
+                    "description_1": "Could bury and destroy a railway car, large truck, several buildings or a piece of forest.",
+                    "description_2": "Snow avalanche traverses flat terrain (considerably below 30°) over distances more than 50 m and can reach valley ground."
+                },
+                "size_5": {
+                    "label": "Size 5",
+                    "name": "Extreme",
+                    "description_1": "Could gouge the landscape; disastrous damage potential.",
+                    "description_2": "Snow avalanche reaches valley ground; largest runout distance known."
+                }
+            }
+
         }
     }
 ];
@@ -257,56 +335,107 @@ var ADAM_NO = [
         }
     },
     {//EAWS [1]
-        "background_color": ADAMcolors.EAWS_background,
+        "background_color": ADAMcolors.CMAH_background,
         "drop_term": "Terminologi",
         "drop_lang": "Språk",
+        "likelihood_matrix": "Utløsningssannsynlighet",
+        "danger_matrix": "Faregrad",
+
+        "likelihoods": {
+            "label": "Utløsnings- sannsynlighet",
+            "classes": {
+                "very_likley": "Meget sannsynlig",
+                "likely": "Sannsynlig",
+                "possible": "Mulig",
+                "unlikely": "Lite sannsynlig"
+            }
+        },
         "sensitivity_to_triggers": {
-            "label": "Sensitivity to triggers",
-            "natural_trigger": "Natural trigger",
-            "human_trigger": "Human trigger",
+            "label": "Nødvendig tilleggs- belastning",
+            "natural_trigger": "Naturlig utløste snøskred",
+            "human_trigger": "Menneske utløste snøskred",
             "classes": {
                 "unreactive": {
-                    "label": "Generally from high additional load",
-                    "natural_trigger": "No avalanches",
-                    "human_trigger": "No avalanches"
+                    "label": "Utløsning generelt kun mulig ved stor tilleggsbelastning",
+                    "natural_trigger": "Ingen snøskred",
+                    "human_trigger": "Lite sannsynlig"
                 },
                 "stubborn": {
-                    "label": "Primarily from high additional load",
-                    "natural_trigger": "Few",
-                    "human_trigger": "Difficult to trigger"
+                    "label": "Utløsning mulig, spesielt ved stor tilleggsbelastning",
+                    "natural_trigger": "Få / et par",
+                    "human_trigger": "Vanskelig å løse ut"
                 },
                 "reactive": {
-                    "label": "With low additional load possible",
-                    "natural_trigger": "Several",
-                    "human_trigger": "Easy to trigger"
+                    "label": "Utløsning mulig, selv ved liten tilleggsbelastning",
+                    "natural_trigger": "Flere",
+                    "human_trigger": "Lett å løse ut av en person"
                 },
                 "touchy": {
-                    "label": "With low additional load probable",
-                    "natural_trigger": "Numerous",
-                    "human_trigger": " Triggering almost certain"
+                    "label": "Utløsning sannsynlig selv ved liten tilleggsbelastning",
+                    "natural_trigger": "Mange / tallrike",
+                    "human_trigger": "Veldig lett å løse ut av en person"
                 }
             }
         },
 
         "spatial_distribution": {
-            "label": "Spatial distribution",
+            "label": "Utbredelse",
             "classes": {
                 "isolated": {
-                    "label": "Isolated",
-                    "description_1": "The instability is spotty and found in only a few terrain features.",
-                    "description_2": "Evidence is rare and hard to find."
+                    "label": "I få brattheng",
+                    "description_1": "Ustabil snø er lite utbredt og finnes kun i få (ofte ekstreme) heng.",
+                    "description_2": "Faretegn er sjelden og/eller vanskelig å se."
                 },
                 "specific": {
-                    "label": "Some",
-                    "description_1": "The instability exists in terrain features with common characteristics.",
-                    "description_2": "Evidence exists but is not always obvious."
+                    "label": "I noen brattheng",
+                    "description_1": "Ustabil snø finnes i terrengformasjoner med samme karakter.",
+                    "description_2": "Faretegn forekommer men er ikke alltid tydelig."
                 },
                 "widespread": {
-                    "label": "Many",
-                    "description_1": "The instability is found in many locations and terrain features.",
-                    "description_2": "Evidence is everywhere and easy to find."
+                    "label": "I mange brattheng",
+                    "description_1": "Ustabil snø finnes i mange heng og terrengformasjoner.",
+                    "description_2": "Det finnes mange og tydelige faretegn."
                 }
             }
+        },
+
+        "avalanche_size": {
+            "label": "Snøskredstørrelse",
+            "description_1": "Beskrivelse",
+            "description_2": "Utløpsklassifisering",
+            "classes": {
+                "size_1": {
+                    "label": "Str. 1",
+                    "name": "Små",
+                    "description_1": "Liten fare for å bli begravet (fare for å falle/bli revet med)",
+                    "description_2": "Utglidning (sluff)"
+                },
+                "size_2": {
+                    "label": "Str. 2",
+                    "name": "Middels store",
+                    "description_1": "Kan begrave, skade eller drepe et menneske.",
+                    "description_2": "Stopper i selve henget"
+                },
+                "size_3": {
+                    "label": "Str. 3",
+                    "name": "Store",
+                    "description_1": "Kan begrave og ødelegge biler, ødelegge hus eller knekke trær.",
+                    "description_2": "Når enden av henget"
+                },
+                "size_4": {
+                    "label": "Str. 4",
+                    "name": "Svært store",
+                    "description_1": "Kan ødelegge tog, flere hus eller skog.",
+                    "description_2": "Krysser flate partier (<<30º) over avstander lengre enn 50 m; kan nå dalbunnen"
+                },
+                "size_5": {
+                    "label": "Str. 5",
+                    "name": "Ekstremt store",
+                    "description_1": "Kan ødelegge bebyggelse og skog.",
+                    "description_2": "Når dalbunnen."
+                }
+            }
+
         }
     }
 ];
@@ -327,7 +456,8 @@ function setLabels(ADAMlabels) {
 
     //Sensitivity to triggers
     $("#sensitivity_l").text(ADAMlabels.sensitivity_to_triggers.label);
-    $("#touchy_l").html("<p data-toggle=\"tooltip\" data-placement=\"top\" title=\"Click for definitions\">" + ADAMlabels.sensitivity_to_triggers.classes.touchy.label + "</p>");
+    //$("#touchy_l").html("<p data-toggle=\"tooltip\" data-placement=\"top\" title=\"Click for definitions\">" + ADAMlabels.sensitivity_to_triggers.classes.touchy.label + "</p>");
+    $("#touchy_l").text(ADAMlabels.sensitivity_to_triggers.classes.touchy.label);
     $("#reactive_l").text(ADAMlabels.sensitivity_to_triggers.classes.reactive.label);
     $("#stubborn_l").text(ADAMlabels.sensitivity_to_triggers.classes.stubborn.label);
     $("#unreactive_l").text(ADAMlabels.sensitivity_to_triggers.classes.unreactive.label);
@@ -350,22 +480,36 @@ function setLabels(ADAMlabels) {
     $('.tbl_frame').css("background", ADAMlabels.background_color);
 
 
+    // $('[data-toggle="collapse"]').click(function (e) {
+    //     $(e.target).find('.icon-minus-sign, .icon-plus-sign').toggleClass("icon-minus-sign icon-plus-sign");
+    // });
+
+
+    ///////////////////////////////////////////////
+    // Marking selected cells                    //
+    // Uncomment lines below - work in progress  //
+    ///////////////////////////////////////////////
+
     // $('#touchy-widespread').click(function () {
-    //     //$(this).css({border: "2px solid red"});
+    //     $(this).css({border: "2px solid red"});
     //     //$('.li, .po, .ul').css({opacity: 0.2});
     //     $('#widespread_l, #touchy_l, #verylikely_l').css({background: ADAMcolors.selected});
     // });
     // $('td.vl').mouseleave(function () {
     //     //$(this).css({border: "1px solid black"});
     //     //$('.li, .po, .ul').css({opacity: 1});
-    //     $('#widespread_l, #touchy_l, #verylikely_l').css({background: "white"});
+    //     $('#widespread_l, #touchy_l, #verylikely_l').css({border: 1px solid red});
     //     // $('.dl1').css({background: ADAMcolors.dl1_background});
     //     // $('.dl2').css({background: ADAMcolors.dl2_background});
     //     // $('.dl3').css({background: ADAMcolors.dl3_background});
     //     // $('.dl4').css({background: ADAMcolors.dl4_background});
     //     // $('.dl5').css({background: ADAMcolors.dl5_background});
     // });
-    
+
+    ////////////////////////////////
+    // Control text in info-panel //
+    ////////////////////////////////
+
     // Spatial distribution
     $('#isolated_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
@@ -381,7 +525,7 @@ function setLabels(ADAMlabels) {
     $('#isolated_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#specific_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -406,7 +550,7 @@ function setLabels(ADAMlabels) {
         $('#info-box-body').html(
             "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_1 + "</p>" +
             "<p>" + ADAMlabels.spatial_distribution.classes.widespread.description_2 + "</p>"// +
-               // "<img src='images/distr_widespread.png'>"
+            // "<img src='images/distr_widespread.png'>"
         );
     });
     $('#widespread_l').mouseleave(function () {
@@ -428,7 +572,7 @@ function setLabels(ADAMlabels) {
     $('#touchy_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#reactive_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -443,7 +587,7 @@ function setLabels(ADAMlabels) {
     $('#reactive_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#stubborn_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -458,7 +602,7 @@ function setLabels(ADAMlabels) {
     $('#stubborn_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#unreactive_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -489,7 +633,7 @@ function setLabels(ADAMlabels) {
     $('#size_1').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#size_2').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -504,7 +648,7 @@ function setLabels(ADAMlabels) {
     $('#size_2').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#size_3').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -519,7 +663,7 @@ function setLabels(ADAMlabels) {
     $('#size_3').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#size_4').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -534,7 +678,7 @@ function setLabels(ADAMlabels) {
     $('#size_4').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
+
     $('#size_5').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
         $('#info-box-heading').html(
@@ -549,7 +693,6 @@ function setLabels(ADAMlabels) {
     $('#size_5').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
-    
 
 
     /////////////////////////////
