@@ -525,6 +525,12 @@ function setLabels(ADAMlabels) {
     $('#isolated_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#isolated_l').click(function () {
+		hadClass = $('#isolated_l').hasClass("vselect1");
+		$('*').removeClass("vselect1");
+		if(!hadClass)$('.isolated').addClass("vselect1");
+		selection_change();
+    });
 
     $('#specific_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
@@ -539,6 +545,12 @@ function setLabels(ADAMlabels) {
     });
     $('#specific_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
+    });
+	$('#specific_l').click(function () {
+		hadClass = $('#specific_1').hasClass("vselect1");
+		$('*').removeClass("vselect1");
+		if(!hadClass)$('.specific').addClass("vselect1");
+		selection_change();
     });
 
     $('#widespread_l').mouseenter(function () {
@@ -556,6 +568,12 @@ function setLabels(ADAMlabels) {
     $('#widespread_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#widespread_l').click(function () {
+		hadClass = $('#widespread_l').hasClass("vselect1");
+		$('*').removeClass("vselect1");
+		if(!hadClass)$('.widespread').addClass("vselect1");
+		selection_change();
+    });
 
     // Sensitivity
     $('#touchy_l').mouseenter(function () {
@@ -572,6 +590,12 @@ function setLabels(ADAMlabels) {
     $('#touchy_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#touchy_l').click(function () {
+		hadClass = $('#touchy_l').hasClass("hselect1");
+		$('*').removeClass("hselect1");
+		if(!hadClass)$('.touchy').addClass("hselect1");
+		selection_change();
+    });
 
     $('#reactive_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
@@ -586,6 +610,12 @@ function setLabels(ADAMlabels) {
     });
     $('#reactive_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
+    });
+	$('#reactive_l').click(function () {
+		hadClass = $('#reactive_l').hasClass("hselect1");
+		$('*').removeClass("hselect1");
+		if(!hadClass)$('.reactive').addClass("hselect1");
+		selection_change();
     });
 
     $('#stubborn_l').mouseenter(function () {
@@ -602,6 +632,12 @@ function setLabels(ADAMlabels) {
     $('#stubborn_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#stubborn_l').click(function () {
+		hadClass = $('#stubborn_l').hasClass("hselect1");
+		$('*').removeClass("hselect1");
+		if(!hadClass)$('.stubborn').addClass("hselect1");
+		selection_change();
+    });
 
     $('#unreactive_l').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
@@ -617,6 +653,27 @@ function setLabels(ADAMlabels) {
     $('#unreactive_l').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#unreactive_l').click(function () {
+		hadClass = $('#unreactive_l').hasClass("hselect1");
+		$('*').removeClass("hselect1");
+		if(!hadClass)$('.unreactive').addClass("hselect1");
+		selection_change();
+    });
+
+	function selection_change(){
+		$('*').removeClass("hselect2");
+		if($('.hselect1.vselect1').length == 1){
+			if($('.hselect1.vselect1.vl').length){
+				$('.vlr').addClass("hselect2");
+			}else if($('.hselect1.vselect1.li').length){
+				$('.lir').addClass("hselect2");
+			}else if($('.hselect1.vselect1.po').length){
+				$('.por').addClass("hselect2");
+			}else if($('.hselect1.vselect1.ul').length){
+				$('.ulr').addClass("hselect2");
+			}
+		}
+	}
 
     // Avalanche size
     $('#size_1').mouseenter(function () {
@@ -633,6 +690,12 @@ function setLabels(ADAMlabels) {
     $('#size_1').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#size_1').click(function () {
+		hadClass = $('#size_1').hasClass("vselect2");
+		$('*').removeClass("vselect2");
+		if(!hadClass)$('.s1c').addClass("vselect2");
+		selection_change();
+    });
 
     $('#size_2').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
@@ -647,6 +710,12 @@ function setLabels(ADAMlabels) {
     });
     $('#size_2').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
+    });
+	$('#size_2').click(function () {
+		hadClass = $('#size_2').hasClass("vselect2");
+		$('*').removeClass("vselect2");
+		if(!hadClass)$('.s2c').addClass("vselect2");
+		selection_change();
     });
 
     $('#size_3').mouseenter(function () {
@@ -663,6 +732,12 @@ function setLabels(ADAMlabels) {
     $('#size_3').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#size_3').click(function () {
+		hadClass = $('#size_3').hasClass("vselect2");
+		$('*').removeClass("vselect2");
+		if(!hadClass)$('.s3c').addClass("vselect2");
+		selection_change();
+    });
 
     $('#size_4').mouseenter(function () {
         $('#info-box').css({visibility: "visible"});
@@ -677,6 +752,12 @@ function setLabels(ADAMlabels) {
     });
     $('#size_4').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
+    });
+	$('#size_4').click(function () {
+		hadClass = $('#size_4').hasClass("vselect2");
+		$('*').removeClass("vselect2");
+		if(!hadClass)$('.s4c').addClass("vselect2");
+		selection_change();
     });
 
     $('#size_5').mouseenter(function () {
@@ -693,6 +774,12 @@ function setLabels(ADAMlabels) {
     $('#size_5').mouseleave(function () {
         $('#info-box').css({visibility: "hidden"});
     });
+	$('#size_5').click(function () {
+		hadClass = $('#size_5').hasClass("vselect2");
+		$('*').removeClass("vselect2");
+		if(!hadClass)$('.s5c').addClass("vselect2");
+		selection_change();
+    });
 
 
     /////////////////////////////
@@ -706,7 +793,7 @@ function setLabels(ADAMlabels) {
 
 $(document).ready(function () {
         var term_select = 0;
-        var ADAMlabels = ADAM_NO;
+        var ADAMlabels = ADAM_EN;
 
         $('#info-box').css({visibility: "hidden"});
 

@@ -51,6 +51,38 @@ th.text-vertical {
     transform: rotate(-90deg);
 }
 
+th.vselect1 {
+	outline: 2px solid black;
+}
+th.hselect1 {
+	outline: 2px solid black;
+}
+td.vselect1 {
+	outline: 2px solid black;
+}
+td.hselect1 {
+	outline: 2px solid black;
+}
+td.vselect1.hselect1 {
+	outline: 4px solid red;
+}
+
+th.vselect2 {
+	outline: 2px solid black;
+}
+th.hselect2 {
+	outline: 2px solid black;
+}
+td.vselect2 {
+	outline: 2px solid black;
+}
+td.hselect2 {
+	outline: 2px solid black;
+}
+td.vselect2.hselect2 {
+	outline: 4px solid red;
+}
+
 /*Remove td to adjust bkg-color of th items */
 
 td.vl {
@@ -86,10 +118,11 @@ td.ul {
 .dl2 {
     background-color: rgb(255, 242, 0);
 }
-
 .dl1 {
     background-color: rgb(80, 184, 72);
 }
+
+
 
 /*
 
