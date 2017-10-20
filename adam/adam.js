@@ -246,6 +246,7 @@ var ADAM_NO = [
                 "unlikely": "Lite sannsynlig"
             }
         },
+        /*
         "sensitivity_to_triggers": {
             "label": "Snødekke- stabilitet",
             "natural_trigger": "Naturlig utløste snøskred",
@@ -270,6 +271,34 @@ var ADAM_NO = [
                     "label": "Elendig",
                     "natural_trigger": "Mange / tallrike",
                     "human_trigger": "Veldig lett å løse ut"
+                }
+            }
+        },
+        */
+        "sensitivity_to_triggers": {
+            "label": "Utløsnings-følsomhet ",
+            "natural_trigger": "Forklaring",
+            "human_trigger": "Typiske observasjoner",
+            "classes": {
+                "unreactive": {
+                    "label": "Vanskelig å løse ut",
+                    "natural_trigger": "Det finnes ingen eller knapt nok et skredproblem. Snødekke har ingen velutviklete svake lag. Stabilitetstester gir ingen eller sent utslag uten bruddforplantning og laget som går til brudd ligger dypt og/eller godt beskyttet under harde (stabile) lag.",
+                    "human_trigger": "ECTX/ECTN>20; ubunden tørr snø; fravær av klasse I observasjoner (ferske skred, drønn, skytende sprekker)."
+                },
+                "stubborn": {
+                    "label": "Utløselig",
+                    "natural_trigger": "Det finnes et skredproblem, men dette er ikke veldig utpreget. Snødekke har noen svake lag, men de har enten dårlig bruddforplantingsevne eller ligger dypt og/eller godt beskyttet under harde (stabile) lag.",
+                    "human_trigger": "ECTN (uten propagering), ru brudd i lille blokktest; muligens svært få og små ferske skred; drønn kan forekomme en sjelden gang; ingen skytende sprekker."
+                },
+                "reactive": {
+                    "label": "Lett å løse ut",
+                    "natural_trigger": "Det finnes et skredproblem i øvre meteren av snødekket. Et eller flere svake lag er vel utviklet. Disse har god bruddforplantningsevne, men er ikke alltid lett å løse ut (f.eks. harde flak).",
+                    "human_trigger": "ECTP >10; glatt brudd i noen blokktester; noen drønn i snøen; korte skytende sprekker; enkelte ferske skred (sjelden større enn str. 2)."
+                },
+                "touchy": {
+                    "label": "Svært lett å løse ut",
+                    "natural_trigger": "Det finnes et skredproblem i øvre meteren av snødekket. Et eller flere svake lag er vel utviklet. Disse har god bruddforplantningsevne og er lett å løse ut.",
+                    "human_trigger": "ECTP <10; lett og glatt brudd i de fleste blokktester; tydelig drønn i snøen; ferske skred (også >str.2); lange (flere meter) skytende sprekker."
                 }
             }
         },
