@@ -243,6 +243,7 @@ var ADAM_NO = [
                 "very_likley": "Meget sannsynlig",
                 "likely": "Sannsynlig",
                 "possible": "Mulig",
+                "": "Lite sannsynlig",
                 "unlikely": "Lite sannsynlig"
             }
         },
@@ -281,12 +282,12 @@ var ADAM_NO = [
             "human_trigger": "Typiske observasjoner",
             "classes": {
                 "unreactive": {
-                    "label": "Vanskelig å løse ut",
+                    "label": "Svært vanskelig å løse ut",
                     "natural_trigger": "Det finnes ingen eller knapt nok et skredproblem. Snødekke har ingen velutviklete svake lag. Stabilitetstester gir ingen eller sent utslag uten bruddforplantning og laget som går til brudd ligger dypt og/eller godt beskyttet under harde (stabile) lag.",
                     "human_trigger": "ECTX/ECTN>20; ubunden tørr snø; fravær av klasse I observasjoner (ferske skred, drønn, skytende sprekker)."
                 },
                 "stubborn": {
-                    "label": "Utløselig",
+                    "label": "Vanskelig å løse ut",
                     "natural_trigger": "Det finnes et skredproblem, men dette er ikke veldig utpreget. Snødekke har noen svake lag, men de har enten dårlig bruddforplantingsevne eller ligger dypt og/eller godt beskyttet under harde (stabile) lag.",
                     "human_trigger": "ECTN (uten propagering), ru brudd i lille blokktest; muligens svært få og små ferske skred; drønn kan forekomme en sjelden gang; ingen skytende sprekker."
                 },
